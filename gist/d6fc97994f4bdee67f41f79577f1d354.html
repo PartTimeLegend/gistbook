@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Check if a server is available</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="Check if a server is available" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content='$s = "google.com" $port = 443 if(!(Test-Connection -TargetName $s -TCPPort $port -quiet)) { Write-Host “Problem connecting to $s” Write-Host “Flushing DNS” Invoke-Expression "ipconfig /flushdns" Write-Host “Registering DNS” Invoke-Expression "ipconfig /registerdns" Write-Host “NSLookup for $s” Invoke-Expression "nslookup $s" Write-Host “Testing again for $s” if(!(Test-Connection -TargetName $s -TCPPort $port -quiet)) { Write-Host “$s unreachable” } else { Write-Host “$s available” } } else { Write-Host "$s available" }'
+    />
+    <meta
+      property="og:description"
+      content='$s = "google.com" $port = 443 if(!(Test-Connection -TargetName $s -TCPPort $port -quiet)) { Write-Host “Problem connecting to $s” Write-Host “Flushing DNS” Invoke-Expression "ipconfig /flushdns" Write-Host “Registering DNS” Invoke-Expression "ipconfig /registerdns" Write-Host “NSLookup for $s” Invoke-Expression "nslookup $s" Write-Host “Testing again for $s” if(!(Test-Connection -TargetName $s -TCPPort $port -quiet)) { Write-Host “$s unreachable” } else { Write-Host “$s available” } } else { Write-Host "$s available" }'
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/d6fc97994f4bdee67f41f79577f1d354"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/d6fc97994f4bdee67f41f79577f1d354"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2020-05-21T09:29:07+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Check if a server is available" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2020-05-21T09:29:07+00:00",
+        "datePublished": "2020-05-21T09:29:07+00:00",
+        "description": "$s = &quot;google.com&quot; $port = 443 if(!(Test-Connection -TargetName $s -TCPPort $port -quiet)) { Write-Host “Problem connecting to $s” Write-Host “Flushing DNS” Invoke-Expression &quot;ipconfig /flushdns&quot; Write-Host “Registering DNS” Invoke-Expression &quot;ipconfig /registerdns&quot; Write-Host “NSLookup for $s” Invoke-Expression &quot;nslookup $s&quot; Write-Host “Testing again for $s” if(!(Test-Connection -TargetName $s -TCPPort $port -quiet)) { Write-Host “$s unreachable” } else { Write-Host “$s available” } } else { Write-Host &quot;$s available&quot; }",
+        "headline": "Check if a server is available",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/d6fc97994f4bdee67f41f79577f1d354"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/d6fc97994f4bdee67f41f79577f1d354"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2020-05-21 09:29:07 +0000">2020-05-21</time>
+          </p>
+
+          <h1>Check if a server is available</h1>
+          <noscript>
+            <pre>
+$s = &quot;google.com&quot;
+$port = 443
+if(!(Test-Connection -TargetName $s -TCPPort $port -quiet))
+{
+    Write-Host “Problem connecting to $s”
+
+    Write-Host “Flushing DNS”
+
+    Invoke-Expression &quot;ipconfig /flushdns&quot;
+
+    Write-Host “Registering DNS”
+
+    Invoke-Expression &quot;ipconfig /registerdns&quot;
+
+    Write-Host “NSLookup for $s”
+
+    Invoke-Expression &quot;nslookup $s&quot;
+
+    Write-Host “Testing again for $s”
+
+    if(!(Test-Connection -TargetName $s -TCPPort $port -quiet))
+    {
+        Write-Host “$s unreachable”
+    }
+    else
+    {
+        Write-Host “$s available”
+    } 
+
+}
+else
+{
+    Write-Host &quot;$s available&quot;
+}
+</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/d6fc97994f4bdee67f41f79577f1d354.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ConvertVARCHARToNVARCHAR.sql</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="ConvertVARCHARToNVARCHAR.sql" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content="SELECT &#39;ALTER TABLE &#39; + isnull(schema_name (syo. id), &#39;dbo&#39;) + &#39;.&#39; + syo .name + &#39; ALTER COLUMN &#39; + syc.name + &#39; NVARCHAR(&#39; + case syc. length when -1 then &#39;MAX&#39; ELSE convert (nvarchar( 10),syc .length) end + &#39;);&#39; FROM sysobjects syo JOIN syscolumns syc ON syc .id = syo.id JOIN systypes syt ON syt .xtype = syc.xtype WHERE syt .name = &#39;varchar&#39; and syo .xtype= &#39;U&#39;"
+    />
+    <meta
+      property="og:description"
+      content="SELECT &#39;ALTER TABLE &#39; + isnull(schema_name (syo. id), &#39;dbo&#39;) + &#39;.&#39; + syo .name + &#39; ALTER COLUMN &#39; + syc.name + &#39; NVARCHAR(&#39; + case syc. length when -1 then &#39;MAX&#39; ELSE convert (nvarchar( 10),syc .length) end + &#39;);&#39; FROM sysobjects syo JOIN syscolumns syc ON syc .id = syo.id JOIN systypes syt ON syt .xtype = syc.xtype WHERE syt .name = &#39;varchar&#39; and syo .xtype= &#39;U&#39;"
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/a89ada8633d70173444e91fd8ab5315d"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/a89ada8633d70173444e91fd8ab5315d"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2016-10-14T11:10:01+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="ConvertVARCHARToNVARCHAR.sql" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2016-10-14T11:10:01+00:00",
+        "datePublished": "2016-10-14T11:10:01+00:00",
+        "description": "SELECT &#39;ALTER TABLE &#39; + isnull(schema_name (syo. id), &#39;dbo&#39;) + &#39;.&#39; + syo .name + &#39; ALTER COLUMN &#39; + syc.name + &#39; NVARCHAR(&#39; + case syc. length when -1 then &#39;MAX&#39; ELSE convert (nvarchar( 10),syc .length) end + &#39;);&#39; FROM sysobjects syo JOIN syscolumns syc ON syc .id = syo.id JOIN systypes syt ON syt .xtype = syc.xtype WHERE syt .name = &#39;varchar&#39; and syo .xtype= &#39;U&#39;",
+        "headline": "ConvertVARCHARToNVARCHAR.sql",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/a89ada8633d70173444e91fd8ab5315d"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/a89ada8633d70173444e91fd8ab5315d"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2016-10-14 11:10:01 +0000">2016-10-14</time>
+          </p>
+
+          <h1>ConvertVARCHARToNVARCHAR.sql</h1>
+          <noscript>
+            <pre>
+SELECT &#39;ALTER TABLE &#39; + isnull(schema_name (syo. id), &#39;dbo&#39;) + &#39;.&#39; +  syo .name
+    + &#39; ALTER COLUMN &#39; + syc.name + &#39; NVARCHAR(&#39; + case syc. length when -1 then &#39;MAX&#39;
+        ELSE convert (nvarchar( 10),syc .length) end + &#39;);&#39;
+   FROM sysobjects syo
+   JOIN syscolumns syc ON
+     syc .id = syo.id
+   JOIN systypes syt ON
+     syt .xtype = syc.xtype
+   WHERE
+     syt .name = &#39;varchar&#39;
+    and syo .xtype= &#39;U&#39;
+</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/a89ada8633d70173444e91fd8ab5315d.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

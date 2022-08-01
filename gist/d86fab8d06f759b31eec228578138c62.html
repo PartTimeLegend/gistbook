@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Test Chocolatey Package</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="Test Chocolatey Package" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content='FROM mcr.microsoft.com/windows:1909 LABEL maintainer="antony.bailey@thepoliceoftheinter.net" RUN powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))" &amp;&amp; SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin" RUN choco.exe install dotnetfx --version 4.7.2.20180712 --fail-on-unfound --yes --no-progress --limit-output --timeout 2700 --force RUN choco list --local-only'
+    />
+    <meta
+      property="og:description"
+      content='FROM mcr.microsoft.com/windows:1909 LABEL maintainer="antony.bailey@thepoliceoftheinter.net" RUN powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))" &amp;&amp; SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin" RUN choco.exe install dotnetfx --version 4.7.2.20180712 --fail-on-unfound --yes --no-progress --limit-output --timeout 2700 --force RUN choco list --local-only'
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/d86fab8d06f759b31eec228578138c62"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/d86fab8d06f759b31eec228578138c62"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2020-11-19T10:05:49+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Test Chocolatey Package" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2020-11-19T10:05:49+00:00",
+        "datePublished": "2020-11-19T10:05:49+00:00",
+        "description": "FROM mcr.microsoft.com/windows:1909 LABEL maintainer=&quot;antony.bailey@thepoliceoftheinter.net&quot; RUN powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\\chocolatey\\bin&quot; RUN choco.exe install dotnetfx --version 4.7.2.20180712 --fail-on-unfound --yes --no-progress --limit-output --timeout 2700 --force RUN choco list --local-only",
+        "headline": "Test Chocolatey Package",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/d86fab8d06f759b31eec228578138c62"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/d86fab8d06f759b31eec228578138c62"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2020-11-19 10:05:49 +0000">2020-11-19</time>
+          </p>
+
+          <h1>Test Chocolatey Package</h1>
+          <noscript>
+            <pre>
+FROM mcr.microsoft.com/windows:1909
+LABEL maintainer=&quot;antony.bailey@thepoliceoftheinter.net&quot;
+RUN powershell.exe -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot;[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&quot; &amp;&amp; SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;
+RUN choco.exe install dotnetfx --version 4.7.2.20180712  --fail-on-unfound --yes --no-progress --limit-output --timeout 2700 --force
+RUN choco list --local-only</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/d86fab8d06f759b31eec228578138c62.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Create Azure Action Group to send Alert Emails to</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta
+      property="og:title"
+      content="Create Azure Action Group to send Alert Emails to"
+    />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content='&lt;# .SYNOPSIS Create Azure Action Group with Email Alerts .DESCRIPTION Running this script allows you to create an Azure Action Group with an Email Address This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT .PARAMETER $emailaddress the email address to send the notifications to .PARAMETER $actionGroupName the name of the action group .PARAMETER $rgName the name of the resource group to create the action group in .PARAMETER $shortName the short name for adding the AG .INPUTS None .OUTPUTS None .NOTES Version: 1.0 Author: Antony Bailey &lt;hi@antonybailey.net&gt; Creation Date: 2021/01/27 Purpose/Change: Initial script development .EXAMPLE ./CreateAzureActionGroupEmailAlerts.ps1 "foo@bar.com" "ag-foo-dev" "rg-foo-dev-eastus" "ag-foo-dev" #&gt; param ( [string] $emailaddress, [string] $actionGroupName, [string] $rgName, [string] $shortName ) $email = New-AzureRmActionGroupReceiver -Name Email -EmailReceiver -EmailAddress $emailAddress Set-AzureRmActionGroup -Name $actionGroupName -ResourceGroupName $rgName -ShortName $shortName -Receiver $email'
+    />
+    <meta
+      property="og:description"
+      content='&lt;# .SYNOPSIS Create Azure Action Group with Email Alerts .DESCRIPTION Running this script allows you to create an Azure Action Group with an Email Address This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT .PARAMETER $emailaddress the email address to send the notifications to .PARAMETER $actionGroupName the name of the action group .PARAMETER $rgName the name of the resource group to create the action group in .PARAMETER $shortName the short name for adding the AG .INPUTS None .OUTPUTS None .NOTES Version: 1.0 Author: Antony Bailey &lt;hi@antonybailey.net&gt; Creation Date: 2021/01/27 Purpose/Change: Initial script development .EXAMPLE ./CreateAzureActionGroupEmailAlerts.ps1 "foo@bar.com" "ag-foo-dev" "rg-foo-dev-eastus" "ag-foo-dev" #&gt; param ( [string] $emailaddress, [string] $actionGroupName, [string] $rgName, [string] $shortName ) $email = New-AzureRmActionGroupReceiver -Name Email -EmailReceiver -EmailAddress $emailAddress Set-AzureRmActionGroup -Name $actionGroupName -ResourceGroupName $rgName -ShortName $shortName -Receiver $email'
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/3b2d719385d710573a2ee1994a2f46cf"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/3b2d719385d710573a2ee1994a2f46cf"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2021-01-27T17:37:54+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      property="twitter:title"
+      content="Create Azure Action Group to send Alert Emails to"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2021-01-27T17:37:54+00:00",
+        "datePublished": "2021-01-27T17:37:54+00:00",
+        "description": "&lt;# .SYNOPSIS Create Azure Action Group with Email Alerts .DESCRIPTION Running this script allows you to create an Azure Action Group with an Email Address This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT .PARAMETER $emailaddress the email address to send the notifications to .PARAMETER $actionGroupName the name of the action group .PARAMETER $rgName the name of the resource group to create the action group in .PARAMETER $shortName the short name for adding the AG .INPUTS None .OUTPUTS None .NOTES Version: 1.0 Author: Antony Bailey &lt;hi@antonybailey.net&gt; Creation Date: 2021/01/27 Purpose/Change: Initial script development .EXAMPLE ./CreateAzureActionGroupEmailAlerts.ps1 &quot;foo@bar.com&quot; &quot;ag-foo-dev&quot; &quot;rg-foo-dev-eastus&quot; &quot;ag-foo-dev&quot; #&gt; param ( [string] $emailaddress, [string] $actionGroupName, [string] $rgName, [string] $shortName ) $email = New-AzureRmActionGroupReceiver -Name Email -EmailReceiver -EmailAddress $emailAddress Set-AzureRmActionGroup -Name $actionGroupName -ResourceGroupName $rgName -ShortName $shortName -Receiver $email",
+        "headline": "Create Azure Action Group to send Alert Emails to",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/3b2d719385d710573a2ee1994a2f46cf"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/3b2d719385d710573a2ee1994a2f46cf"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2021-01-27 17:37:54 +0000">2021-01-27</time>
+          </p>
+
+          <h1>Create Azure Action Group to send Alert Emails to</h1>
+          <noscript>
+            <pre>
+&lt;#
+.SYNOPSIS
+  Create Azure Action Group with Email Alerts
+.DESCRIPTION
+  Running this script allows you to create an Azure Action Group with an Email Address
+  
+  This PowerShell script is released under the MIT license http://www.opensource.org/licenses/MIT
+.PARAMETER $emailaddress the email address to send the notifications to
+.PARAMETER $actionGroupName the name of the action group
+.PARAMETER $rgName the name of the resource group to create the action group in
+.PARAMETER $shortName the short name for adding the AG
+.INPUTS
+  None
+.OUTPUTS
+  None
+.NOTES
+  Version:        1.0
+  Author:         Antony Bailey &lt;hi@antonybailey.net&gt;
+  Creation Date:  2021/01/27
+  Purpose/Change: Initial script development
+  
+.EXAMPLE
+  ./CreateAzureActionGroupEmailAlerts.ps1 &quot;foo@bar.com&quot; &quot;ag-foo-dev&quot; &quot;rg-foo-dev-eastus&quot; &quot;ag-foo-dev&quot;
+#&gt;
+param (
+  [string] $emailaddress, 
+  [string] $actionGroupName, 
+  [string] $rgName, 
+  [string] $shortName
+ )
+$email = New-AzureRmActionGroupReceiver -Name Email -EmailReceiver -EmailAddress $emailAddress
+Set-AzureRmActionGroup -Name $actionGroupName -ResourceGroupName $rgName -ShortName $shortName -Receiver $email</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/3b2d719385d710573a2ee1994a2f46cf.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

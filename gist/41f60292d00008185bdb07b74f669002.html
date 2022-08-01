@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AddCryptoLogs.ps1</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="AddCryptoLogs.ps1" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content='# https://www.microsoft.com/security/blog/2017/09/07/new-iis-functionality-to-help-identify-weak-tls-usage/ function AddCryptoLogs { Import-Module &#39;WebAdministration&#39; $Websites = Get-ChildItem IIS:\Sites foreach ($Site in $Websites) { Write-Host $Site.name Write-Host "crypt-protocol" Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter "system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields" -name "." -value @{logFieldName=&#39;crypt-protocol&#39;;sourceName=&#39;CRYPT_PROTOCOL&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host "crypt-cipher" Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter "system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields" -name "." -value @{logFieldName=&#39;crypt-cipher&#39;;sourceName=&#39;CRYPT_CIPHER_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host "crypt-hash" Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter "system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields" -name "." -value @{logFieldName=&#39;crypt-hash&#39;;sourceName=&#39;CRYPT_HASH_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host "crypt-keyexchange" Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter "system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields" -name "." -value @{logFieldName=&#39;crypt-keyexchange&#39;;sourceName=&#39;CRYPT_KEYEXCHANGE_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} } } AddCryptoLogs'
+    />
+    <meta
+      property="og:description"
+      content='# https://www.microsoft.com/security/blog/2017/09/07/new-iis-functionality-to-help-identify-weak-tls-usage/ function AddCryptoLogs { Import-Module &#39;WebAdministration&#39; $Websites = Get-ChildItem IIS:\Sites foreach ($Site in $Websites) { Write-Host $Site.name Write-Host "crypt-protocol" Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter "system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields" -name "." -value @{logFieldName=&#39;crypt-protocol&#39;;sourceName=&#39;CRYPT_PROTOCOL&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host "crypt-cipher" Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter "system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields" -name "." -value @{logFieldName=&#39;crypt-cipher&#39;;sourceName=&#39;CRYPT_CIPHER_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host "crypt-hash" Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter "system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields" -name "." -value @{logFieldName=&#39;crypt-hash&#39;;sourceName=&#39;CRYPT_HASH_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host "crypt-keyexchange" Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter "system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields" -name "." -value @{logFieldName=&#39;crypt-keyexchange&#39;;sourceName=&#39;CRYPT_KEYEXCHANGE_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} } } AddCryptoLogs'
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/41f60292d00008185bdb07b74f669002"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/41f60292d00008185bdb07b74f669002"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2020-08-07T13:05:50+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="AddCryptoLogs.ps1" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2020-08-07T13:05:50+00:00",
+        "datePublished": "2020-08-07T13:05:50+00:00",
+        "description": "# https://www.microsoft.com/security/blog/2017/09/07/new-iis-functionality-to-help-identify-weak-tls-usage/ function AddCryptoLogs { Import-Module &#39;WebAdministration&#39; $Websites = Get-ChildItem IIS:\\Sites foreach ($Site in $Websites) { Write-Host $Site.name Write-Host &quot;crypt-protocol&quot; Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter &quot;system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields&quot; -name &quot;.&quot; -value @{logFieldName=&#39;crypt-protocol&#39;;sourceName=&#39;CRYPT_PROTOCOL&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host &quot;crypt-cipher&quot; Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter &quot;system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields&quot; -name &quot;.&quot; -value @{logFieldName=&#39;crypt-cipher&#39;;sourceName=&#39;CRYPT_CIPHER_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host &quot;crypt-hash&quot; Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter &quot;system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields&quot; -name &quot;.&quot; -value @{logFieldName=&#39;crypt-hash&#39;;sourceName=&#39;CRYPT_HASH_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} Write-Host &quot;crypt-keyexchange&quot; Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39; -filter &quot;system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields&quot; -name &quot;.&quot; -value @{logFieldName=&#39;crypt-keyexchange&#39;;sourceName=&#39;CRYPT_KEYEXCHANGE_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;} } } AddCryptoLogs",
+        "headline": "AddCryptoLogs.ps1",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/41f60292d00008185bdb07b74f669002"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/41f60292d00008185bdb07b74f669002"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2020-08-07 13:05:50 +0000">2020-08-07</time>
+          </p>
+
+          <h1>AddCryptoLogs.ps1</h1>
+          <noscript>
+            <pre>
+# https://www.microsoft.com/security/blog/2017/09/07/new-iis-functionality-to-help-identify-weak-tls-usage/
+function AddCryptoLogs
+{
+    Import-Module &#39;WebAdministration&#39;
+    $Websites =  Get-ChildItem IIS:\Sites
+    foreach ($Site in $Websites)
+    {
+        Write-Host $Site.name
+        Write-Host &quot;crypt-protocol&quot;
+        Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39;  -filter &quot;system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields&quot; -name &quot;.&quot; -value @{logFieldName=&#39;crypt-protocol&#39;;sourceName=&#39;CRYPT_PROTOCOL&#39;;sourceType=&#39;ServerVariable&#39;}
+        Write-Host &quot;crypt-cipher&quot;
+        Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39;  -filter &quot;system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields&quot; -name &quot;.&quot; -value @{logFieldName=&#39;crypt-cipher&#39;;sourceName=&#39;CRYPT_CIPHER_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;}
+        Write-Host &quot;crypt-hash&quot;
+        Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39;  -filter &quot;system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields&quot; -name &quot;.&quot; -value @{logFieldName=&#39;crypt-hash&#39;;sourceName=&#39;CRYPT_HASH_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;}
+        Write-Host &quot;crypt-keyexchange&quot;
+        Add-WebConfigurationProperty -pspath &#39;MACHINE/WEBROOT/APPHOST&#39;  -filter &quot;system.applicationHost/sites/site[@name=&#39;$($Site.name)&#39;]/logFile/customFields&quot; -name &quot;.&quot; -value @{logFieldName=&#39;crypt-keyexchange&#39;;sourceName=&#39;CRYPT_KEYEXCHANGE_ALG_ID&#39;;sourceType=&#39;ServerVariable&#39;}   
+    }
+}
+AddCryptoLogs</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/41f60292d00008185bdb07b74f669002.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

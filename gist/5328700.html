@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix!</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta
+      property="og:title"
+      content="/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix!"
+    />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content="#/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix! When setting up [Virtual Box](https://www.virtualbox.org/) I was faced with the immortal error telling me to run `sudo /etc/init.d/vboxdrv setup`. Simple enough, until you&#39;re told it doesn&#39;t exist. Thus began my fight to get it working. The fix is here in the hope that it helps someone else. To follow this guide you need to have a basic understanding of shell commands. If you don&#39;t, then just be careful. First off I like aptitute so let&#39;s install it. `sudo apt-get install aptitude` Now update. `sudo aptitude update` And upgrade. `sudo aptitude upgrade` Now remove Virtual Box. `sudo aptitude remove virtualbox` Install Virtual Box. `sudo aptitude install virtualbox` Install generic headers. `sudo aptitude install linux-headers-3.5.0-17-generic` Remove dkms. It&#39;s bugged at this point. `sudo aptitude remove virtualbox-dkms` Install dkms and it will build. Why does it not do this originally? Who knows? `sudo aptitude install virtualbox-dkms` Now start it. This is where we see the fix for the not found. It&#39;s a different file name! `sudo /etc/init.d/virtualbox start` Add your user to the vboxuser group so you can access USB devices. `sudo usermod -aG vboxuser youruser` Finally a reboot. `sudo reboot` There you go all setup and working. ## TL;DR Save and close everything and run this. ` sudo apt-get install aptitude &amp;&amp; sudo aptitude update &amp;&amp; sudo aptitude upgrade &amp;&amp; sudo aptitude remove virtualbox &amp;&amp; sudo aptitude install virtualbox &amp;&amp; sudo aptitude install linux-headers-3.5.0-17-generic &amp;&amp; sudo aptitude remove virtualbox-dkms &amp;&amp; sudo aptitude install virtualbox-dkms &amp;&amp; sudo /etc/init.d/virtualbox start &amp;&amp; sudo usermod -aG vboxuser youruser &amp;&amp; sudo reboot `"
+    />
+    <meta
+      property="og:description"
+      content="#/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix! When setting up [Virtual Box](https://www.virtualbox.org/) I was faced with the immortal error telling me to run `sudo /etc/init.d/vboxdrv setup`. Simple enough, until you&#39;re told it doesn&#39;t exist. Thus began my fight to get it working. The fix is here in the hope that it helps someone else. To follow this guide you need to have a basic understanding of shell commands. If you don&#39;t, then just be careful. First off I like aptitute so let&#39;s install it. `sudo apt-get install aptitude` Now update. `sudo aptitude update` And upgrade. `sudo aptitude upgrade` Now remove Virtual Box. `sudo aptitude remove virtualbox` Install Virtual Box. `sudo aptitude install virtualbox` Install generic headers. `sudo aptitude install linux-headers-3.5.0-17-generic` Remove dkms. It&#39;s bugged at this point. `sudo aptitude remove virtualbox-dkms` Install dkms and it will build. Why does it not do this originally? Who knows? `sudo aptitude install virtualbox-dkms` Now start it. This is where we see the fix for the not found. It&#39;s a different file name! `sudo /etc/init.d/virtualbox start` Add your user to the vboxuser group so you can access USB devices. `sudo usermod -aG vboxuser youruser` Finally a reboot. `sudo reboot` There you go all setup and working. ## TL;DR Save and close everything and run this. ` sudo apt-get install aptitude &amp;&amp; sudo aptitude update &amp;&amp; sudo aptitude upgrade &amp;&amp; sudo aptitude remove virtualbox &amp;&amp; sudo aptitude install virtualbox &amp;&amp; sudo aptitude install linux-headers-3.5.0-17-generic &amp;&amp; sudo aptitude remove virtualbox-dkms &amp;&amp; sudo aptitude install virtualbox-dkms &amp;&amp; sudo /etc/init.d/virtualbox start &amp;&amp; sudo usermod -aG vboxuser youruser &amp;&amp; sudo reboot `"
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/5328700"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/5328700"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2019-09-24T01:44:03+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      property="twitter:title"
+      content="/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix!"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2019-09-24T01:44:03+00:00",
+        "datePublished": "2019-09-24T01:44:03+00:00",
+        "description": "#/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix! When setting up [Virtual Box](https://www.virtualbox.org/) I was faced with the immortal error telling me to run `sudo /etc/init.d/vboxdrv setup`. Simple enough, until you&#39;re told it doesn&#39;t exist. Thus began my fight to get it working. The fix is here in the hope that it helps someone else. To follow this guide you need to have a basic understanding of shell commands. If you don&#39;t, then just be careful. First off I like aptitute so let&#39;s install it. `sudo apt-get install aptitude` Now update. `sudo aptitude update` And upgrade. `sudo aptitude upgrade` Now remove Virtual Box. `sudo aptitude remove virtualbox` Install Virtual Box. `sudo aptitude install virtualbox` Install generic headers. `sudo aptitude install linux-headers-3.5.0-17-generic` Remove dkms. It&#39;s bugged at this point. `sudo aptitude remove virtualbox-dkms` Install dkms and it will build. Why does it not do this originally? Who knows? `sudo aptitude install virtualbox-dkms` Now start it. This is where we see the fix for the not found. It&#39;s a different file name! `sudo /etc/init.d/virtualbox start` Add your user to the vboxuser group so you can access USB devices. `sudo usermod -aG vboxuser youruser` Finally a reboot. `sudo reboot` There you go all setup and working. ## TL;DR Save and close everything and run this. ` sudo apt-get install aptitude &amp;&amp; sudo aptitude update &amp;&amp; sudo aptitude upgrade &amp;&amp; sudo aptitude remove virtualbox &amp;&amp; sudo aptitude install virtualbox &amp;&amp; sudo aptitude install linux-headers-3.5.0-17-generic &amp;&amp; sudo aptitude remove virtualbox-dkms &amp;&amp; sudo aptitude install virtualbox-dkms &amp;&amp; sudo /etc/init.d/virtualbox start &amp;&amp; sudo usermod -aG vboxuser youruser &amp;&amp; sudo reboot `",
+        "headline": "/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix!",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/5328700"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/5328700"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2019-09-24 01:44:03 +0000">2019-09-24</time>
+          </p>
+
+          <h1>/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix!</h1>
+          <noscript>
+            <pre>
+#/etc/init.d/vboxdrv setup Not Found - VirtualBox Fix!
+
+When setting up [Virtual Box](https://www.virtualbox.org/) I was faced with the immortal error telling me to run `sudo /etc/init.d/vboxdrv setup`. Simple enough, until you&#39;re told it doesn&#39;t exist.
+
+Thus began my fight to get it working. The fix is here in the hope that it helps someone else.
+
+To follow this guide you need to have a basic understanding of shell commands. If you don&#39;t, then just be careful.
+
+First off I like aptitute so let&#39;s install it.
+
+`sudo apt-get install aptitude`
+
+Now update.
+
+`sudo aptitude update`
+
+And upgrade.
+
+`sudo aptitude upgrade`
+
+Now remove Virtual Box.
+
+`sudo aptitude remove virtualbox`
+
+Install Virtual Box.
+
+`sudo aptitude install virtualbox`
+
+Install generic headers.
+
+`sudo aptitude install linux-headers-3.5.0-17-generic`
+
+Remove dkms. It&#39;s bugged at this point.
+
+`sudo aptitude remove virtualbox-dkms`
+
+Install dkms and it will build. Why does it not do this originally? Who knows?
+
+`sudo aptitude install virtualbox-dkms`
+
+Now start it. This is where we see the fix for the not found. It&#39;s a different file name!
+
+`sudo /etc/init.d/virtualbox start`
+
+Add your user to the vboxuser group so you can access USB devices.
+
+`sudo usermod -aG vboxuser youruser`
+
+Finally a reboot.
+
+`sudo reboot`
+
+There you go all setup and working.
+
+
+## TL;DR
+
+Save and close everything and run this.
+
+`
+sudo apt-get install aptitude &amp;&amp; sudo aptitude update &amp;&amp; sudo aptitude upgrade &amp;&amp; sudo aptitude remove virtualbox &amp;&amp; sudo aptitude install virtualbox &amp;&amp; sudo aptitude install linux-headers-3.5.0-17-generic &amp;&amp; sudo aptitude remove virtualbox-dkms &amp;&amp; sudo aptitude install virtualbox-dkms &amp;&amp; sudo /etc/init.d/virtualbox start &amp;&amp; sudo usermod -aG vboxuser youruser &amp;&amp; sudo reboot
+`
+</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/5328700.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

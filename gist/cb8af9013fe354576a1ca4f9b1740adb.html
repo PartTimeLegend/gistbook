@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Reindex.sql</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="Reindex.sql" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content="DECLARE @Database VARCHAR(255) DECLARE @Table VARCHAR(255) DECLARE @cmd NVARCHAR(500) DECLARE @fillfactor INT SET @fillfactor = 90 DECLARE DatabaseCursor CURSOR FOR SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN (&#39;master&#39;,&#39;msdb&#39;,&#39;tempdb&#39;,&#39;model&#39;,&#39;distribution&#39;) ORDER BY 1 OPEN DatabaseCursor FETCH NEXT FROM DatabaseCursor INTO @Database WHILE @@FETCH_STATUS = 0 BEGIN SET @cmd = &#39;DECLARE TableCursor CURSOR FOR SELECT &#39;&#39;[&#39;&#39; + table_catalog + &#39;&#39;].[&#39;&#39; + table_schema + &#39;&#39;].[&#39;&#39; + table_name + &#39;&#39;]&#39;&#39; as tableName FROM [&#39; + @Database + &#39;].INFORMATION_SCHEMA.TABLES WHERE table_type = &#39;&#39;BASE TABLE&#39;&#39;&#39; -- create table cursor EXEC (@cmd) OPEN TableCursor FETCH NEXT FROM TableCursor INTO @Table WHILE @@FETCH_STATUS = 0 BEGIN IF (@@MICROSOFTVERSION / POWER(2, 24) &gt;= 9) BEGIN -- SQL 2005 or higher command SET @cmd = &#39;ALTER INDEX ALL ON &#39; + @Table + &#39; REBUILD WITH (FILLFACTOR = &#39; + CONVERT(VARCHAR(3),@fillfactor) + &#39;)&#39; EXEC (@cmd) END ELSE BEGIN -- SQL 2000 command DBCC DBREINDEX(@Table,&#39; &#39;,@fillfactor) END FETCH NEXT FROM TableCursor INTO @Table END CLOSE TableCursor DEALLOCATE TableCursor FETCH NEXT FROM DatabaseCursor INTO @Database END CLOSE DatabaseCursor DEALLOCATE DatabaseCursor"
+    />
+    <meta
+      property="og:description"
+      content="DECLARE @Database VARCHAR(255) DECLARE @Table VARCHAR(255) DECLARE @cmd NVARCHAR(500) DECLARE @fillfactor INT SET @fillfactor = 90 DECLARE DatabaseCursor CURSOR FOR SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN (&#39;master&#39;,&#39;msdb&#39;,&#39;tempdb&#39;,&#39;model&#39;,&#39;distribution&#39;) ORDER BY 1 OPEN DatabaseCursor FETCH NEXT FROM DatabaseCursor INTO @Database WHILE @@FETCH_STATUS = 0 BEGIN SET @cmd = &#39;DECLARE TableCursor CURSOR FOR SELECT &#39;&#39;[&#39;&#39; + table_catalog + &#39;&#39;].[&#39;&#39; + table_schema + &#39;&#39;].[&#39;&#39; + table_name + &#39;&#39;]&#39;&#39; as tableName FROM [&#39; + @Database + &#39;].INFORMATION_SCHEMA.TABLES WHERE table_type = &#39;&#39;BASE TABLE&#39;&#39;&#39; -- create table cursor EXEC (@cmd) OPEN TableCursor FETCH NEXT FROM TableCursor INTO @Table WHILE @@FETCH_STATUS = 0 BEGIN IF (@@MICROSOFTVERSION / POWER(2, 24) &gt;= 9) BEGIN -- SQL 2005 or higher command SET @cmd = &#39;ALTER INDEX ALL ON &#39; + @Table + &#39; REBUILD WITH (FILLFACTOR = &#39; + CONVERT(VARCHAR(3),@fillfactor) + &#39;)&#39; EXEC (@cmd) END ELSE BEGIN -- SQL 2000 command DBCC DBREINDEX(@Table,&#39; &#39;,@fillfactor) END FETCH NEXT FROM TableCursor INTO @Table END CLOSE TableCursor DEALLOCATE TableCursor FETCH NEXT FROM DatabaseCursor INTO @Database END CLOSE DatabaseCursor DEALLOCATE DatabaseCursor"
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/cb8af9013fe354576a1ca4f9b1740adb"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/cb8af9013fe354576a1ca4f9b1740adb"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2016-10-14T05:46:34+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Reindex.sql" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2016-10-14T05:46:34+00:00",
+        "datePublished": "2016-10-14T05:46:34+00:00",
+        "description": "DECLARE @Database VARCHAR(255) DECLARE @Table VARCHAR(255) DECLARE @cmd NVARCHAR(500) DECLARE @fillfactor INT SET @fillfactor = 90 DECLARE DatabaseCursor CURSOR FOR SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN (&#39;master&#39;,&#39;msdb&#39;,&#39;tempdb&#39;,&#39;model&#39;,&#39;distribution&#39;) ORDER BY 1 OPEN DatabaseCursor FETCH NEXT FROM DatabaseCursor INTO @Database WHILE @@FETCH_STATUS = 0 BEGIN SET @cmd = &#39;DECLARE TableCursor CURSOR FOR SELECT &#39;&#39;[&#39;&#39; + table_catalog + &#39;&#39;].[&#39;&#39; + table_schema + &#39;&#39;].[&#39;&#39; + table_name + &#39;&#39;]&#39;&#39; as tableName FROM [&#39; + @Database + &#39;].INFORMATION_SCHEMA.TABLES WHERE table_type = &#39;&#39;BASE TABLE&#39;&#39;&#39; -- create table cursor EXEC (@cmd) OPEN TableCursor FETCH NEXT FROM TableCursor INTO @Table WHILE @@FETCH_STATUS = 0 BEGIN IF (@@MICROSOFTVERSION / POWER(2, 24) &gt;= 9) BEGIN -- SQL 2005 or higher command SET @cmd = &#39;ALTER INDEX ALL ON &#39; + @Table + &#39; REBUILD WITH (FILLFACTOR = &#39; + CONVERT(VARCHAR(3),@fillfactor) + &#39;)&#39; EXEC (@cmd) END ELSE BEGIN -- SQL 2000 command DBCC DBREINDEX(@Table,&#39; &#39;,@fillfactor) END FETCH NEXT FROM TableCursor INTO @Table END CLOSE TableCursor DEALLOCATE TableCursor FETCH NEXT FROM DatabaseCursor INTO @Database END CLOSE DatabaseCursor DEALLOCATE DatabaseCursor",
+        "headline": "Reindex.sql",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/cb8af9013fe354576a1ca4f9b1740adb"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/cb8af9013fe354576a1ca4f9b1740adb"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2016-10-14 05:46:34 +0000">2016-10-14</time>
+          </p>
+
+          <h1>Reindex.sql</h1>
+          <noscript>
+            <pre>
+DECLARE @Database VARCHAR(255)   
+DECLARE @Table VARCHAR(255)  
+DECLARE @cmd NVARCHAR(500)  
+DECLARE @fillfactor INT 
+
+SET @fillfactor = 90 
+
+DECLARE DatabaseCursor CURSOR FOR  
+SELECT name FROM master.dbo.sysdatabases   
+WHERE name NOT IN (&#39;master&#39;,&#39;msdb&#39;,&#39;tempdb&#39;,&#39;model&#39;,&#39;distribution&#39;)   
+ORDER BY 1  
+
+OPEN DatabaseCursor  
+
+FETCH NEXT FROM DatabaseCursor INTO @Database  
+WHILE @@FETCH_STATUS = 0  
+BEGIN  
+
+   SET @cmd = &#39;DECLARE TableCursor CURSOR FOR SELECT &#39;&#39;[&#39;&#39; + table_catalog + &#39;&#39;].[&#39;&#39; + table_schema + &#39;&#39;].[&#39;&#39; + 
+  table_name + &#39;&#39;]&#39;&#39; as tableName FROM [&#39; + @Database + &#39;].INFORMATION_SCHEMA.TABLES 
+  WHERE table_type = &#39;&#39;BASE TABLE&#39;&#39;&#39;   
+
+   -- create table cursor  
+   EXEC (@cmd)  
+   OPEN TableCursor   
+
+   FETCH NEXT FROM TableCursor INTO @Table   
+   WHILE @@FETCH_STATUS = 0   
+   BEGIN   
+
+       IF (@@MICROSOFTVERSION / POWER(2, 24) &gt;= 9)
+       BEGIN
+           -- SQL 2005 or higher command 
+           SET @cmd = &#39;ALTER INDEX ALL ON &#39; + @Table + &#39; REBUILD WITH (FILLFACTOR = &#39; + CONVERT(VARCHAR(3),@fillfactor) + &#39;)&#39; 
+           EXEC (@cmd) 
+       END
+       ELSE
+       BEGIN
+          -- SQL 2000 command 
+          DBCC DBREINDEX(@Table,&#39; &#39;,@fillfactor)  
+       END
+
+       FETCH NEXT FROM TableCursor INTO @Table   
+   END   
+
+   CLOSE TableCursor   
+   DEALLOCATE TableCursor  
+
+   FETCH NEXT FROM DatabaseCursor INTO @Database  
+END  
+CLOSE DatabaseCursor   
+DEALLOCATE DatabaseCursor</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/cb8af9013fe354576a1ca4f9b1740adb.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

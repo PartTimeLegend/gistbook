@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Export Terraform from existing AWS Infrastructure with Terraforming
+    </title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta
+      property="og:title"
+      content="Export Terraform from existing AWS Infrastructure with Terraforming"
+    />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content="terraforming alb &gt; alb.tf --use-bundled-cert # ALB terraforming asg &gt; asg.tf --use-bundled-cert # AutoScaling Group terraforming cwa &gt; cwa.tf --use-bundled-cert # CloudWatch Alarm terraforming dbpg &gt; dbpg.tf --use-bundled-cert # Database Parameter Group terraforming dbsg &gt; dbsg.tf --use-bundled-cert # Database Security Group terraforming dbsn &gt; dbsn.tf --use-bundled-cert # Database Subnet Group terraforming ddb &gt; ddb.tf --use-bundled-cert # DynamoDB terraforming ec2 &gt; ec2.tf --use-bundled-cert # EC2 terraforming ecc &gt; ecc.tf --use-bundled-cert # ElastiCache Cluster terraforming ecsn &gt; ecsn.tf --use-bundled-cert # ElastiCache Subnet Group terraforming efs &gt; efs.tf --use-bundled-cert # EFS File System terraforming eip &gt; eip.tf --use-bundled-cert # EIP terraforming elb &gt; elb.tf --use-bundled-cert # ELB terraforming iamg &gt; iamg.tf --use-bundled-cert # IAM Group terraforming iamgm &gt; iamgm.tf --use-bundled-cert # IAM Group Membership terraforming iamgp &gt; iamgp.tf --use-bundled-cert # IAM Group Policy terraforming iamip &gt; iamip.tf --use-bundled-cert # IAM Instance Profile terraforming iamp &gt; iamp.tf --use-bundled-cert # IAM Policy terraforming iampa &gt; iampa.tf --use-bundled-cert # IAM Policy Attachment terraforming iamr &gt; iamr.tf --use-bundled-cert # IAM Role terraforming iamrp &gt; iamrp.tf --use-bundled-cert # IAM Role Policy terraforming iamu &gt; iamu.tf --use-bundled-cert # IAM User terraforming iamup &gt; iamup.tf --use-bundled-cert # IAM User Policy terraforming igw &gt; igw.tf --use-bundled-cert # Internet Gateway terraforming kmsa &gt; kmsa.tf --use-bundled-cert # KMS Key Alias terraforming kmsk &gt; kmsk.tf --use-bundled-cert # KMS Key terraforming lc &gt; lc.tf --use-bundled-cert # Launch Configuration terraforming nacl &gt; nacl.tf --use-bundled-cert # Network ACL terraforming nat &gt; nat.tf --use-bundled-cert # NAT Gateway terraforming nif &gt; nif.tf --use-bundled-cert # Network Interface terraforming r53r &gt; r53r.tf --use-bundled-cert # Route53 Record terraforming r53z &gt; r53z.tf --use-bundled-cert # Route53 Hosted Zone terraforming rds &gt; rds.tf --use-bundled-cert # RDS terraforming rs &gt; rs.tf --use-bundled-cert # Redshift terraforming rt &gt; rt.tf --use-bundled-cert # Route Table terraforming rta &gt; rta.tf --use-bundled-cert # Route Table Association terraforming s3 &gt; s3.tf --use-bundled-cert # S3 terraforming sg &gt; sg.tf --use-bundled-cert # Security Group terraforming sn &gt; sn.tf --use-bundled-cert # Subnet terraforming snst &gt; snst.tf --use-bundled-cert # SNS Topic terraforming snss &gt; snss.tf --use-bundled-cert # SNS Subscription terraforming sqs &gt; sqs.tf --use-bundled-cert # SQS terraforming vgw &gt; vgw.tf --use-bundled-cert # VPN Gateway terraforming vpc &gt; vpc.tf --use-bundled-cert # VPC"
+    />
+    <meta
+      property="og:description"
+      content="terraforming alb &gt; alb.tf --use-bundled-cert # ALB terraforming asg &gt; asg.tf --use-bundled-cert # AutoScaling Group terraforming cwa &gt; cwa.tf --use-bundled-cert # CloudWatch Alarm terraforming dbpg &gt; dbpg.tf --use-bundled-cert # Database Parameter Group terraforming dbsg &gt; dbsg.tf --use-bundled-cert # Database Security Group terraforming dbsn &gt; dbsn.tf --use-bundled-cert # Database Subnet Group terraforming ddb &gt; ddb.tf --use-bundled-cert # DynamoDB terraforming ec2 &gt; ec2.tf --use-bundled-cert # EC2 terraforming ecc &gt; ecc.tf --use-bundled-cert # ElastiCache Cluster terraforming ecsn &gt; ecsn.tf --use-bundled-cert # ElastiCache Subnet Group terraforming efs &gt; efs.tf --use-bundled-cert # EFS File System terraforming eip &gt; eip.tf --use-bundled-cert # EIP terraforming elb &gt; elb.tf --use-bundled-cert # ELB terraforming iamg &gt; iamg.tf --use-bundled-cert # IAM Group terraforming iamgm &gt; iamgm.tf --use-bundled-cert # IAM Group Membership terraforming iamgp &gt; iamgp.tf --use-bundled-cert # IAM Group Policy terraforming iamip &gt; iamip.tf --use-bundled-cert # IAM Instance Profile terraforming iamp &gt; iamp.tf --use-bundled-cert # IAM Policy terraforming iampa &gt; iampa.tf --use-bundled-cert # IAM Policy Attachment terraforming iamr &gt; iamr.tf --use-bundled-cert # IAM Role terraforming iamrp &gt; iamrp.tf --use-bundled-cert # IAM Role Policy terraforming iamu &gt; iamu.tf --use-bundled-cert # IAM User terraforming iamup &gt; iamup.tf --use-bundled-cert # IAM User Policy terraforming igw &gt; igw.tf --use-bundled-cert # Internet Gateway terraforming kmsa &gt; kmsa.tf --use-bundled-cert # KMS Key Alias terraforming kmsk &gt; kmsk.tf --use-bundled-cert # KMS Key terraforming lc &gt; lc.tf --use-bundled-cert # Launch Configuration terraforming nacl &gt; nacl.tf --use-bundled-cert # Network ACL terraforming nat &gt; nat.tf --use-bundled-cert # NAT Gateway terraforming nif &gt; nif.tf --use-bundled-cert # Network Interface terraforming r53r &gt; r53r.tf --use-bundled-cert # Route53 Record terraforming r53z &gt; r53z.tf --use-bundled-cert # Route53 Hosted Zone terraforming rds &gt; rds.tf --use-bundled-cert # RDS terraforming rs &gt; rs.tf --use-bundled-cert # Redshift terraforming rt &gt; rt.tf --use-bundled-cert # Route Table terraforming rta &gt; rta.tf --use-bundled-cert # Route Table Association terraforming s3 &gt; s3.tf --use-bundled-cert # S3 terraforming sg &gt; sg.tf --use-bundled-cert # Security Group terraforming sn &gt; sn.tf --use-bundled-cert # Subnet terraforming snst &gt; snst.tf --use-bundled-cert # SNS Topic terraforming snss &gt; snss.tf --use-bundled-cert # SNS Subscription terraforming sqs &gt; sqs.tf --use-bundled-cert # SQS terraforming vgw &gt; vgw.tf --use-bundled-cert # VPN Gateway terraforming vpc &gt; vpc.tf --use-bundled-cert # VPC"
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/29e2d2d9c52c3cd8815de0818772bc5a"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/29e2d2d9c52c3cd8815de0818772bc5a"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2021-07-22T09:49:34+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      property="twitter:title"
+      content="Export Terraform from existing AWS Infrastructure with Terraforming"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2021-07-22T09:49:34+00:00",
+        "datePublished": "2021-07-22T09:49:34+00:00",
+        "description": "terraforming alb &gt; alb.tf --use-bundled-cert # ALB terraforming asg &gt; asg.tf --use-bundled-cert # AutoScaling Group terraforming cwa &gt; cwa.tf --use-bundled-cert # CloudWatch Alarm terraforming dbpg &gt; dbpg.tf --use-bundled-cert # Database Parameter Group terraforming dbsg &gt; dbsg.tf --use-bundled-cert # Database Security Group terraforming dbsn &gt; dbsn.tf --use-bundled-cert # Database Subnet Group terraforming ddb &gt; ddb.tf --use-bundled-cert # DynamoDB terraforming ec2 &gt; ec2.tf --use-bundled-cert # EC2 terraforming ecc &gt; ecc.tf --use-bundled-cert # ElastiCache Cluster terraforming ecsn &gt; ecsn.tf --use-bundled-cert # ElastiCache Subnet Group terraforming efs &gt; efs.tf --use-bundled-cert # EFS File System terraforming eip &gt; eip.tf --use-bundled-cert # EIP terraforming elb &gt; elb.tf --use-bundled-cert # ELB terraforming iamg &gt; iamg.tf --use-bundled-cert # IAM Group terraforming iamgm &gt; iamgm.tf --use-bundled-cert # IAM Group Membership terraforming iamgp &gt; iamgp.tf --use-bundled-cert # IAM Group Policy terraforming iamip &gt; iamip.tf --use-bundled-cert # IAM Instance Profile terraforming iamp &gt; iamp.tf --use-bundled-cert # IAM Policy terraforming iampa &gt; iampa.tf --use-bundled-cert # IAM Policy Attachment terraforming iamr &gt; iamr.tf --use-bundled-cert # IAM Role terraforming iamrp &gt; iamrp.tf --use-bundled-cert # IAM Role Policy terraforming iamu &gt; iamu.tf --use-bundled-cert # IAM User terraforming iamup &gt; iamup.tf --use-bundled-cert # IAM User Policy terraforming igw &gt; igw.tf --use-bundled-cert # Internet Gateway terraforming kmsa &gt; kmsa.tf --use-bundled-cert # KMS Key Alias terraforming kmsk &gt; kmsk.tf --use-bundled-cert # KMS Key terraforming lc &gt; lc.tf --use-bundled-cert # Launch Configuration terraforming nacl &gt; nacl.tf --use-bundled-cert # Network ACL terraforming nat &gt; nat.tf --use-bundled-cert # NAT Gateway terraforming nif &gt; nif.tf --use-bundled-cert # Network Interface terraforming r53r &gt; r53r.tf --use-bundled-cert # Route53 Record terraforming r53z &gt; r53z.tf --use-bundled-cert # Route53 Hosted Zone terraforming rds &gt; rds.tf --use-bundled-cert # RDS terraforming rs &gt; rs.tf --use-bundled-cert # Redshift terraforming rt &gt; rt.tf --use-bundled-cert # Route Table terraforming rta &gt; rta.tf --use-bundled-cert # Route Table Association terraforming s3 &gt; s3.tf --use-bundled-cert # S3 terraforming sg &gt; sg.tf --use-bundled-cert # Security Group terraforming sn &gt; sn.tf --use-bundled-cert # Subnet terraforming snst &gt; snst.tf --use-bundled-cert # SNS Topic terraforming snss &gt; snss.tf --use-bundled-cert # SNS Subscription terraforming sqs &gt; sqs.tf --use-bundled-cert # SQS terraforming vgw &gt; vgw.tf --use-bundled-cert # VPN Gateway terraforming vpc &gt; vpc.tf --use-bundled-cert # VPC",
+        "headline": "Export Terraform from existing AWS Infrastructure with Terraforming",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/29e2d2d9c52c3cd8815de0818772bc5a"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/29e2d2d9c52c3cd8815de0818772bc5a"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2021-07-22 09:49:34 +0000">2021-07-22</time>
+          </p>
+
+          <h1>
+            Export Terraform from existing AWS Infrastructure with Terraforming
+          </h1>
+          <noscript>
+            <pre>
+terraforming alb &gt; alb.tf --use-bundled-cert     # ALB
+terraforming asg &gt; asg.tf --use-bundled-cert     # AutoScaling Group
+terraforming cwa &gt; cwa.tf --use-bundled-cert     # CloudWatch Alarm
+terraforming dbpg &gt; dbpg.tf --use-bundled-cert   # Database Parameter Group
+terraforming dbsg &gt; dbsg.tf --use-bundled-cert   # Database Security Group
+terraforming dbsn &gt; dbsn.tf --use-bundled-cert   # Database Subnet Group
+terraforming ddb &gt; ddb.tf --use-bundled-cert     # DynamoDB
+terraforming ec2 &gt; ec2.tf --use-bundled-cert     # EC2
+terraforming ecc &gt; ecc.tf --use-bundled-cert     # ElastiCache Cluster
+terraforming ecsn &gt; ecsn.tf --use-bundled-cert   # ElastiCache Subnet Group
+terraforming efs &gt; efs.tf --use-bundled-cert     # EFS File System
+terraforming eip &gt; eip.tf --use-bundled-cert     # EIP
+terraforming elb &gt; elb.tf --use-bundled-cert     # ELB
+terraforming iamg &gt; iamg.tf --use-bundled-cert   # IAM Group
+terraforming iamgm &gt; iamgm.tf --use-bundled-cert # IAM Group Membership
+terraforming iamgp &gt; iamgp.tf --use-bundled-cert # IAM Group Policy
+terraforming iamip &gt; iamip.tf --use-bundled-cert # IAM Instance Profile
+terraforming iamp &gt; iamp.tf --use-bundled-cert   # IAM Policy
+terraforming iampa &gt; iampa.tf --use-bundled-cert # IAM Policy Attachment
+terraforming iamr &gt; iamr.tf --use-bundled-cert   # IAM Role
+terraforming iamrp &gt; iamrp.tf --use-bundled-cert # IAM Role Policy
+terraforming iamu &gt; iamu.tf --use-bundled-cert   # IAM User
+terraforming iamup &gt; iamup.tf --use-bundled-cert # IAM User Policy
+terraforming igw &gt; igw.tf --use-bundled-cert     # Internet Gateway
+terraforming kmsa &gt; kmsa.tf --use-bundled-cert   # KMS Key Alias
+terraforming kmsk &gt; kmsk.tf --use-bundled-cert   # KMS Key
+terraforming lc &gt; lc.tf --use-bundled-cert       # Launch Configuration
+terraforming nacl &gt; nacl.tf --use-bundled-cert   # Network ACL
+terraforming nat &gt; nat.tf --use-bundled-cert     # NAT Gateway
+terraforming nif &gt; nif.tf --use-bundled-cert     # Network Interface
+terraforming r53r &gt; r53r.tf --use-bundled-cert   # Route53 Record
+terraforming r53z &gt; r53z.tf --use-bundled-cert   # Route53 Hosted Zone
+terraforming rds &gt; rds.tf --use-bundled-cert     # RDS
+terraforming rs &gt; rs.tf --use-bundled-cert       # Redshift
+terraforming rt &gt; rt.tf --use-bundled-cert       # Route Table
+terraforming rta &gt; rta.tf --use-bundled-cert     # Route Table Association
+terraforming s3 &gt; s3.tf --use-bundled-cert       # S3
+terraforming sg &gt; sg.tf --use-bundled-cert       # Security Group
+terraforming sn &gt; sn.tf --use-bundled-cert       # Subnet
+terraforming snst &gt; snst.tf --use-bundled-cert   # SNS Topic
+terraforming snss &gt; snss.tf --use-bundled-cert   # SNS Subscription
+terraforming sqs &gt; sqs.tf --use-bundled-cert     # SQS
+terraforming vgw &gt; vgw.tf --use-bundled-cert     # VPN Gateway
+terraforming vpc  &gt; vpc.tf  --use-bundled-cert   # VPC       </pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/29e2d2d9c52c3cd8815de0818772bc5a.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>regions.tf</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="regions.tf" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content='variable "az_region" { type = string default = "UK South" } variable "az_region_abbr_map" { type = map(any) description = "Map is used to obtain 3 letter azure region abreviation for naming resources" default = { "Central US" = "cus" "East US 2" = "eus2" "East US" = "eus" "North Central US" = "ncus" "South Central US" = "nsus" "West US 2" = "wus2" "West Central US" = "wcus" "West US,US DoD Central" = "wusd" "US DoD East" = "usde" "US Gov. Arizona" = "usga" "US Gov. Iowa" = "usgi" "US Gov. Texas" = "usgt" "US Gov. Virginia" = "usgv" "US Sec East" = "usse" "US Sec West" = "ussw" "Canada Central" = "cc" "Canade East" = "ce" "Brazil South" = "bs" "North Europe" = "eun" "West Europe" = "euw" "UK South" = "uks" "UK West" = "ukw" "Germany North" = "gn" "Germany West Central" = "gwc" "Switzerland North" = "sn" "Switzerland West" = "sw" "Norway West" = "nw" "Norway East" = "ne" "East Asia" = "ea" "Southeast Asia" = "sa" "Australia Central" = "ac" "Australia Central 2" = "ac2" "Australia East" = "ae" "Australia Southeast" = "as" "China East" = "ce" "China North" = "cn" "China East 2" = "ce2" "China North 2" = "cn2" "Central India" = "ci" "South India" = "si" "West India" = "wi" "Japan East" = "je" "Japan West" = "jw" "Korea Central" = "kc" "Korea South" = "ks" "South Africa North" = "san" "South Africa West" = "saw" "UAE Central" = "uc" "UAE North" = "un" } }'
+    />
+    <meta
+      property="og:description"
+      content='variable "az_region" { type = string default = "UK South" } variable "az_region_abbr_map" { type = map(any) description = "Map is used to obtain 3 letter azure region abreviation for naming resources" default = { "Central US" = "cus" "East US 2" = "eus2" "East US" = "eus" "North Central US" = "ncus" "South Central US" = "nsus" "West US 2" = "wus2" "West Central US" = "wcus" "West US,US DoD Central" = "wusd" "US DoD East" = "usde" "US Gov. Arizona" = "usga" "US Gov. Iowa" = "usgi" "US Gov. Texas" = "usgt" "US Gov. Virginia" = "usgv" "US Sec East" = "usse" "US Sec West" = "ussw" "Canada Central" = "cc" "Canade East" = "ce" "Brazil South" = "bs" "North Europe" = "eun" "West Europe" = "euw" "UK South" = "uks" "UK West" = "ukw" "Germany North" = "gn" "Germany West Central" = "gwc" "Switzerland North" = "sn" "Switzerland West" = "sw" "Norway West" = "nw" "Norway East" = "ne" "East Asia" = "ea" "Southeast Asia" = "sa" "Australia Central" = "ac" "Australia Central 2" = "ac2" "Australia East" = "ae" "Australia Southeast" = "as" "China East" = "ce" "China North" = "cn" "China East 2" = "ce2" "China North 2" = "cn2" "Central India" = "ci" "South India" = "si" "West India" = "wi" "Japan East" = "je" "Japan West" = "jw" "Korea Central" = "kc" "Korea South" = "ks" "South Africa North" = "san" "South Africa West" = "saw" "UAE Central" = "uc" "UAE North" = "un" } }'
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/46fa328a8271568316675e8cb02e77e6"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/46fa328a8271568316675e8cb02e77e6"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2021-04-23T21:46:05+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="regions.tf" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2021-04-23T21:46:05+00:00",
+        "datePublished": "2021-04-23T21:46:05+00:00",
+        "description": "variable &quot;az_region&quot; { type = string default = &quot;UK South&quot; } variable &quot;az_region_abbr_map&quot; { type = map(any) description = &quot;Map is used to obtain 3 letter azure region abreviation for naming resources&quot; default = { &quot;Central US&quot; = &quot;cus&quot; &quot;East US 2&quot; = &quot;eus2&quot; &quot;East US&quot; = &quot;eus&quot; &quot;North Central US&quot; = &quot;ncus&quot; &quot;South Central US&quot; = &quot;nsus&quot; &quot;West US 2&quot; = &quot;wus2&quot; &quot;West Central US&quot; = &quot;wcus&quot; &quot;West US,US DoD Central&quot; = &quot;wusd&quot; &quot;US DoD East&quot; = &quot;usde&quot; &quot;US Gov. Arizona&quot; = &quot;usga&quot; &quot;US Gov. Iowa&quot; = &quot;usgi&quot; &quot;US Gov. Texas&quot; = &quot;usgt&quot; &quot;US Gov. Virginia&quot; = &quot;usgv&quot; &quot;US Sec East&quot; = &quot;usse&quot; &quot;US Sec West&quot; = &quot;ussw&quot; &quot;Canada Central&quot; = &quot;cc&quot; &quot;Canade East&quot; = &quot;ce&quot; &quot;Brazil South&quot; = &quot;bs&quot; &quot;North Europe&quot; = &quot;eun&quot; &quot;West Europe&quot; = &quot;euw&quot; &quot;UK South&quot; = &quot;uks&quot; &quot;UK West&quot; = &quot;ukw&quot; &quot;Germany North&quot; = &quot;gn&quot; &quot;Germany West Central&quot; = &quot;gwc&quot; &quot;Switzerland North&quot; = &quot;sn&quot; &quot;Switzerland West&quot; = &quot;sw&quot; &quot;Norway West&quot; = &quot;nw&quot; &quot;Norway East&quot; = &quot;ne&quot; &quot;East Asia&quot; = &quot;ea&quot; &quot;Southeast Asia&quot; = &quot;sa&quot; &quot;Australia Central&quot; = &quot;ac&quot; &quot;Australia Central 2&quot; = &quot;ac2&quot; &quot;Australia East&quot; = &quot;ae&quot; &quot;Australia Southeast&quot; = &quot;as&quot; &quot;China East&quot; = &quot;ce&quot; &quot;China North&quot; = &quot;cn&quot; &quot;China East 2&quot; = &quot;ce2&quot; &quot;China North 2&quot; = &quot;cn2&quot; &quot;Central India&quot; = &quot;ci&quot; &quot;South India&quot; = &quot;si&quot; &quot;West India&quot; = &quot;wi&quot; &quot;Japan East&quot; = &quot;je&quot; &quot;Japan West&quot; = &quot;jw&quot; &quot;Korea Central&quot; = &quot;kc&quot; &quot;Korea South&quot; = &quot;ks&quot; &quot;South Africa North&quot; = &quot;san&quot; &quot;South Africa West&quot; = &quot;saw&quot; &quot;UAE Central&quot; = &quot;uc&quot; &quot;UAE North&quot; = &quot;un&quot; } }",
+        "headline": "regions.tf",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/46fa328a8271568316675e8cb02e77e6"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/46fa328a8271568316675e8cb02e77e6"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2021-04-23 21:46:05 +0000">2021-04-23</time>
+          </p>
+
+          <h1>regions.tf</h1>
+          <noscript>
+            <pre>
+variable &quot;az_region&quot; {
+  type    = string
+  default = &quot;UK South&quot;
+}
+variable &quot;az_region_abbr_map&quot; {
+  type        = map(any)
+  description = &quot;Map is used to obtain 3 letter azure region abreviation for naming resources&quot;
+  default = {
+    &quot;Central US&quot;             = &quot;cus&quot;
+    &quot;East US 2&quot;              = &quot;eus2&quot;
+    &quot;East US&quot;                = &quot;eus&quot;
+    &quot;North Central US&quot;       = &quot;ncus&quot;
+    &quot;South Central US&quot;       = &quot;nsus&quot;
+    &quot;West US 2&quot;              = &quot;wus2&quot;
+    &quot;West Central US&quot;        = &quot;wcus&quot;
+    &quot;West US,US DoD Central&quot; = &quot;wusd&quot;
+    &quot;US DoD East&quot;            = &quot;usde&quot;
+    &quot;US Gov. Arizona&quot;        = &quot;usga&quot;
+    &quot;US Gov. Iowa&quot;           = &quot;usgi&quot;
+    &quot;US Gov. Texas&quot;          = &quot;usgt&quot;
+    &quot;US Gov. Virginia&quot;       = &quot;usgv&quot;
+    &quot;US Sec East&quot;            = &quot;usse&quot;
+    &quot;US Sec West&quot;            = &quot;ussw&quot;
+    &quot;Canada Central&quot;         = &quot;cc&quot;
+    &quot;Canade East&quot;            = &quot;ce&quot;
+    &quot;Brazil South&quot;           = &quot;bs&quot;
+    &quot;North Europe&quot;           = &quot;eun&quot;
+    &quot;West Europe&quot;            = &quot;euw&quot;
+    &quot;UK South&quot;               = &quot;uks&quot;
+    &quot;UK West&quot;                = &quot;ukw&quot;
+    &quot;Germany North&quot;          = &quot;gn&quot;
+    &quot;Germany West Central&quot;   = &quot;gwc&quot;
+    &quot;Switzerland North&quot;      = &quot;sn&quot;
+    &quot;Switzerland West&quot;       = &quot;sw&quot;
+    &quot;Norway West&quot;            = &quot;nw&quot;
+    &quot;Norway East&quot;            = &quot;ne&quot;
+    &quot;East Asia&quot;              = &quot;ea&quot;
+    &quot;Southeast Asia&quot;         = &quot;sa&quot;
+    &quot;Australia Central&quot;      = &quot;ac&quot;
+    &quot;Australia Central 2&quot;    = &quot;ac2&quot;
+    &quot;Australia East&quot;         = &quot;ae&quot;
+    &quot;Australia Southeast&quot;    = &quot;as&quot;
+    &quot;China East&quot;             = &quot;ce&quot;
+    &quot;China North&quot;            = &quot;cn&quot;
+    &quot;China East 2&quot;           = &quot;ce2&quot;
+    &quot;China North 2&quot;          = &quot;cn2&quot;
+    &quot;Central India&quot;          = &quot;ci&quot;
+    &quot;South India&quot;            = &quot;si&quot;
+    &quot;West India&quot;             = &quot;wi&quot;
+    &quot;Japan East&quot;             = &quot;je&quot;
+    &quot;Japan West&quot;             = &quot;jw&quot;
+    &quot;Korea Central&quot;          = &quot;kc&quot;
+    &quot;Korea South&quot;            = &quot;ks&quot;
+    &quot;South Africa North&quot;     = &quot;san&quot;
+    &quot;South Africa West&quot;      = &quot;saw&quot;
+    &quot;UAE Central&quot;            = &quot;uc&quot;
+    &quot;UAE North&quot;              = &quot;un&quot;
+  }
+}
+</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/46fa328a8271568316675e8cb02e77e6.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

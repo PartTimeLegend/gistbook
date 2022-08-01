@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>getindexes.sql</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="getindexes.sql" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content="SELECT DB_NAME() AS [Database Name] ,sys.schemas.name AS [Schema Name] ,sys.objects.name AS [Table Name] ,sys.indexes.name AS [Index Name] ,sys.indexes.type_desc AS [Index Type] ,sys.indexes.fill_factor AS [Fill Factor] FROM sys.indexes INNER JOIN sys.objects ON sys.indexes..object_id = sys.objects.object_id INNER JOIN sys.schemas ON sys.objects.schema_id = sc.schemas.schema_id WHERE sys.indexes.name IS NOT NULL AND sys.objects.type = &#39;U&#39; ORDER BY sys.indexes.fill_factor DESC ,sys.objects.name"
+    />
+    <meta
+      property="og:description"
+      content="SELECT DB_NAME() AS [Database Name] ,sys.schemas.name AS [Schema Name] ,sys.objects.name AS [Table Name] ,sys.indexes.name AS [Index Name] ,sys.indexes.type_desc AS [Index Type] ,sys.indexes.fill_factor AS [Fill Factor] FROM sys.indexes INNER JOIN sys.objects ON sys.indexes..object_id = sys.objects.object_id INNER JOIN sys.schemas ON sys.objects.schema_id = sc.schemas.schema_id WHERE sys.indexes.name IS NOT NULL AND sys.objects.type = &#39;U&#39; ORDER BY sys.indexes.fill_factor DESC ,sys.objects.name"
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/cf044aea3ad7d22f9e2e38b31461b4a6"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/cf044aea3ad7d22f9e2e38b31461b4a6"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2020-06-29T17:10:53+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="getindexes.sql" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2020-06-29T17:10:53+00:00",
+        "datePublished": "2020-06-29T17:10:53+00:00",
+        "description": "SELECT DB_NAME() AS [Database Name] ,sys.schemas.name AS [Schema Name] ,sys.objects.name AS [Table Name] ,sys.indexes.name AS [Index Name] ,sys.indexes.type_desc AS [Index Type] ,sys.indexes.fill_factor AS [Fill Factor] FROM sys.indexes INNER JOIN sys.objects ON sys.indexes..object_id = sys.objects.object_id INNER JOIN sys.schemas ON sys.objects.schema_id = sc.schemas.schema_id WHERE sys.indexes.name IS NOT NULL AND sys.objects.type = &#39;U&#39; ORDER BY sys.indexes.fill_factor DESC ,sys.objects.name",
+        "headline": "getindexes.sql",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/cf044aea3ad7d22f9e2e38b31461b4a6"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/cf044aea3ad7d22f9e2e38b31461b4a6"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2020-06-29 17:10:53 +0000">2020-06-29</time>
+          </p>
+
+          <h1>getindexes.sql</h1>
+          <noscript>
+            <pre>
+SELECT 		DB_NAME() AS [Database Name]
+			,sys.schemas.name AS [Schema Name]
+			,sys.objects.name AS [Table Name]
+			,sys.indexes.name AS [Index Name]
+			,sys.indexes.type_desc AS [Index Type]
+			,sys.indexes.fill_factor AS [Fill Factor]
+FROM		sys.indexes
+INNER JOIN	sys.objects 
+	ON		sys.indexes..object_id = sys.objects.object_id
+INNER JOIN	sys.schemas
+	ON		sys.objects.schema_id = sc.schemas.schema_id
+WHERE		sys.indexes.name IS NOT NULL
+AND			sys.objects.type = &#39;U&#39;
+ORDER BY 	sys.indexes.fill_factor DESC
+			,sys.objects.name</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/cf044aea3ad7d22f9e2e38b31461b4a6.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sync a dir to s3</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="Sync a dir to s3" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content='param( [Parameter(Mandatory=$True)] [string]$localDirectory, [Parameter(Mandatory=$True)] [string]$s3Bucket, [Parameter(Mandatory=$True)] [string]$logFile ) Write-Output "Syncing to S3 Bucket" $(Get-Date -Format o) &gt; $logFile aws s3 sync $localDirectory s3://$s3bucket &gt; $logFile Write-Output "Syncing from S3 Bucket" $(Get-Date -Format o) &gt; $logFile aws s3 sync s3://$s3Bucket $localDirectory &gt; $logFile Write-Output "Syncing Complete" $(Get-Date -Format o) &gt; $logFile'
+    />
+    <meta
+      property="og:description"
+      content='param( [Parameter(Mandatory=$True)] [string]$localDirectory, [Parameter(Mandatory=$True)] [string]$s3Bucket, [Parameter(Mandatory=$True)] [string]$logFile ) Write-Output "Syncing to S3 Bucket" $(Get-Date -Format o) &gt; $logFile aws s3 sync $localDirectory s3://$s3bucket &gt; $logFile Write-Output "Syncing from S3 Bucket" $(Get-Date -Format o) &gt; $logFile aws s3 sync s3://$s3Bucket $localDirectory &gt; $logFile Write-Output "Syncing Complete" $(Get-Date -Format o) &gt; $logFile'
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/363b8ebd255157a53643fb6eaf8d2d4b"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/363b8ebd255157a53643fb6eaf8d2d4b"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2021-03-23T11:41:35+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Sync a dir to s3" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2021-03-23T11:41:35+00:00",
+        "datePublished": "2021-03-23T11:41:35+00:00",
+        "description": "param( [Parameter(Mandatory=$True)] [string]$localDirectory, [Parameter(Mandatory=$True)] [string]$s3Bucket, [Parameter(Mandatory=$True)] [string]$logFile ) Write-Output &quot;Syncing to S3 Bucket&quot; $(Get-Date -Format o) &gt; $logFile aws s3 sync $localDirectory s3://$s3bucket &gt; $logFile Write-Output &quot;Syncing from S3 Bucket&quot; $(Get-Date -Format o) &gt; $logFile aws s3 sync s3://$s3Bucket $localDirectory &gt; $logFile Write-Output &quot;Syncing Complete&quot; $(Get-Date -Format o) &gt; $logFile",
+        "headline": "Sync a dir to s3",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/363b8ebd255157a53643fb6eaf8d2d4b"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/363b8ebd255157a53643fb6eaf8d2d4b"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2021-03-23 11:41:35 +0000">2021-03-23</time>
+          </p>
+
+          <h1>Sync a dir to s3</h1>
+          <noscript>
+            <pre>
+param(
+    [Parameter(Mandatory=$True)]
+    [string]$localDirectory, 
+    [Parameter(Mandatory=$True)]
+    [string]$s3Bucket,
+    [Parameter(Mandatory=$True)]
+    [string]$logFile
+    )
+Write-Output &quot;Syncing to S3 Bucket&quot; $(Get-Date -Format o) &gt; $logFile
+aws s3 sync $localDirectory s3://$s3bucket &gt; $logFile
+Write-Output &quot;Syncing from S3 Bucket&quot; $(Get-Date -Format o) &gt; $logFile
+aws s3 sync s3://$s3Bucket $localDirectory &gt; $logFile
+Write-Output &quot;Syncing Complete&quot; $(Get-Date -Format o) &gt; $logFile</pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/363b8ebd255157a53643fb6eaf8d2d4b.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>runiex.ps1</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta property="og:title" content="runiex.ps1" />
+    <meta name="author" content="Tomáš Krupka" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      name="description"
+      content='#Copyright 2020 Antony Bailey &lt;hi@antonybailey.net&gt; # #Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: # #The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. # #THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. function runiex($cmd) { Write-Host $(__LINE__) $true "Running $cmd" try { $cmd += &#39;;$?&#39; $retVal = Invoke-Expression $cmd if(-not $retVal) { Write-Host $(__LINE__) $true "$cmd did not work" [Environment]::Exit(-1) } } catch { Write-Host $(__LINE__) $true "$cmd did not work" [Environment]::Exit(-1) } }'
+    />
+    <meta
+      property="og:description"
+      content='#Copyright 2020 Antony Bailey &lt;hi@antonybailey.net&gt; # #Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: # #The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. # #THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. function runiex($cmd) { Write-Host $(__LINE__) $true "Running $cmd" try { $cmd += &#39;;$?&#39; $retVal = Invoke-Expression $cmd if(-not $retVal) { Write-Host $(__LINE__) $true "$cmd did not work" [Environment]::Exit(-1) } } catch { Write-Host $(__LINE__) $true "$cmd did not work" [Environment]::Exit(-1) } }'
+    />
+    <link
+      rel="canonical"
+      href="https://parttimelegend.github.io/gistbook/gist/11fb23739dac8f1fe52bd974a338be86"
+    />
+    <meta
+      property="og:url"
+      content="https://parttimelegend.github.io/gistbook/gist/11fb23739dac8f1fe52bd974a338be86"
+    />
+    <meta property="og:site_name" content="Gistbook" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="article:published_time"
+      content="2020-04-30T10:59:49+00:00"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="runiex.ps1" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": { "@type": "Person", "name": "Tomáš Krupka" },
+        "dateModified": "2020-04-30T10:59:49+00:00",
+        "datePublished": "2020-04-30T10:59:49+00:00",
+        "description": "#Copyright 2020 Antony Bailey &lt;hi@antonybailey.net&gt; # #Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: # #The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. # #THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. function runiex($cmd) { Write-Host $(__LINE__) $true &quot;Running $cmd&quot; try { $cmd += &#39;;$?&#39; $retVal = Invoke-Expression $cmd if(-not $retVal) { Write-Host $(__LINE__) $true &quot;$cmd did not work&quot; [Environment]::Exit(-1) } } catch { Write-Host $(__LINE__) $true &quot;$cmd did not work&quot; [Environment]::Exit(-1) } }",
+        "headline": "runiex.ps1",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://parttimelegend.github.io/gistbook/gist/11fb23739dac8f1fe52bd974a338be86"
+        },
+        "url": "https://parttimelegend.github.io/gistbook/gist/11fb23739dac8f1fe52bd974a338be86"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="https://parttimelegend.github.io/gistbook/feed.xml"
+      title="Gistbook"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/gistbook/logo.png" />
+    <link rel="stylesheet" href="/gistbook/assets/css/main.css" />
+  </head>
+  <body a="auto">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/gistbook/">home</a>
+        <article>
+          <p class="post-meta">
+            <time datetime="2020-04-30 10:59:49 +0000">2020-04-30</time>
+          </p>
+
+          <h1>runiex.ps1</h1>
+          <noscript>
+            <pre>
+#Copyright 2020 Antony Bailey &lt;hi@antonybailey.net&gt;
+#
+#Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+#
+#The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+#
+#THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+function runiex($cmd)
+{
+    Write-Host $(__LINE__) $true &quot;Running $cmd&quot;
+    try
+    {
+        $cmd += &#39;;$?&#39;
+        $retVal = Invoke-Expression $cmd
+        if(-not $retVal)
+        {
+            Write-Host $(__LINE__) $true &quot;$cmd did not work&quot;
+            [Environment]::Exit(-1)
+        }
+    }
+    catch
+    {
+            Write-Host $(__LINE__) $true &quot;$cmd did not work&quot;
+            [Environment]::Exit(-1)
+    }
+} </pre
+            >
+          </noscript>
+          <script src="https://gist.github.com/PartTimeLegend/11fb23739dac8f1fe52bd974a338be86.js"></script>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
